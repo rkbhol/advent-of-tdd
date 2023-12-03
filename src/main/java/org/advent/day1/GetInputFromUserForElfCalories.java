@@ -9,13 +9,13 @@ class GetInputFromUserForElfCalories {
         while(elfid<=5) {
             Elf elf=new Elf(elfid);
             System.out.printf("Enter Calories collected by Elf %d " +
-                    "(Enter a number in each line. To end enter a space):\n",elfid);
+                    "(Enter a number in each line. To end enter a space or blank line):\n",elfid);
             Scanner in = new Scanner(System.in); // Using Scanner for Getting Input from User
             int i = 0;
             int[] foodCalories = new int[10];
             while (true) {
                 String input = in.nextLine();
-                if (input.equals(" ")) break;
+                if (input.equals(" ") || input.isEmpty()) break;
                 foodCalories[i] = Integer.parseInt(input);
                 i++;
             }
